@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/app/rtl/dynamic_equalizer.sv", "/app/rtl/error_calc.sv", "/app/rtl/coeff_update.sv"]
+
+[metadata]
+name = "cvdp_agentic_dynamic_equalizer_0001"
+difficulty = "hard"
+category = "chip-design/rtl"
+tags = ["systemverilog", "cvdp", "cid003", "code-generation"]
+
+[verifier]
+timeout_sec = 600.0
+collect = []
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"
+mcp_servers = []

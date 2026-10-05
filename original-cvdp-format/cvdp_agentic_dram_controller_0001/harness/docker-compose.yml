@@ -1,0 +1,23 @@
+services:
+  direct:
+    build: .
+    volumes:
+      - ./src/:/src/:ro # Infrastructure location
+    working_dir : /code/rundir
+    env_file    : ./src/.env
+    command     : pytest -o cache_dir=/code/rundir/.cache /src/test_runner.py -v
+
+  xrun:
+    image: __VERIF_EDA_IMAGE__
+    volumes:
+      - ./src/:/src/:ro # Infrastructure location
+    env_file : ./src/.env
+    working_dir: /code/rundir
+    command: pytest /src/process.py -v -s
+    networks:
+      - licnetwork
+
+networks:
+  licnetwork:
+      name: licnetwork
+      external: true

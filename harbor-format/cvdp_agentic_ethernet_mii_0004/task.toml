@@ -1,0 +1,21 @@
+schema_version = "1.4"
+artifacts = ["/app/rtl/ethernet_mii_tx.sv", "/app/rtl/ethernet_fifo_cdc.sv"]
+
+[metadata]
+name = "cvdp_agentic_ethernet_mii_0004"
+difficulty = "medium"
+category = "chip-design/rtl"
+tags = ["systemverilog", "cvdp", "cid003", "code-generation"]
+
+[verifier]
+timeout_sec = 600.0
+collect = []
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"
+mcp_servers = []

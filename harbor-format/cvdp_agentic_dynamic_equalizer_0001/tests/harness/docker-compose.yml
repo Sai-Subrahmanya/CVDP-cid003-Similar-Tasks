@@ -1,0 +1,8 @@
+services:
+  direct:
+    build: .
+    volumes:
+      - ./src/:/src/:ro # Infrastructure location
+    working_dir : /code/rundir
+    env_file    : ./src/.env
+    command     : pytest -o cache_dir=/code/rundir/.cache /src/test_runner.py -v
